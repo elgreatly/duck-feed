@@ -19,7 +19,7 @@ export class BadRequestExceptionFilter implements ExceptionFilter {
                 Object.keys(err.constraints).forEach((key: string) => {
                     const message = err.constraints[key];
                     const errMessage =
-                        err.contexts && err.contexts[key] && err.contexts[key][0] === 'translated'
+                        (err.contexts && err.contexts[key] && err.contexts[key][0] === 'translated') || key === 'IsDateFormat'
                             ? i18n.translate(message, { lang })
                             : message;
                     errorMessages.push(errMessage);

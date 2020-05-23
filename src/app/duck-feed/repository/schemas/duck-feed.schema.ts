@@ -1,10 +1,25 @@
 import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
 import { Document } from 'mongoose';
 
-@Schema()
+@Schema({timestamps: true})
 export class DuckFeed extends Document {
   @Prop()
+  fedTime: string;
+
+  @Prop()
   food: string;
+
+  @Prop()
+  place: string;
+
+  @Prop()
+  numberOfDucks: number;
+
+  @Prop()
+  foodType: string;
+
+  @Prop()
+  foodWeight: string;
 }
 
-export const DuckFeedSchema = SchemaFactory.createForClass(DuckFeed);
+export const DuckFeedInfoSchema = SchemaFactory.createForClass(DuckFeed);
