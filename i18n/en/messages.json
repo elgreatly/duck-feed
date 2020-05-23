@@ -3,7 +3,7 @@
   "invalidTime": "please add valid time",
   "invalidString": "should be string",
   "invalidNumber": "should be Number",
-  "successCreate": "Duck Feed Saved Successfully",
+  "successCreated": "Duck Feed Created Successfully",
   "invalidBoolean": "Should be boolean",
-  "successCreatedAndScheduled": "Duck Feed Saved And Scheduled Successfully"
+  "successCreatedAndScheduled": "Duck Feed Created And Scheduled Successfully"
 }
