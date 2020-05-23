@@ -1,4 +1,4 @@
-Payment engine service
+Duck Feed service
 
 ## Installation
 
