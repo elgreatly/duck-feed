@@ -2,9 +2,9 @@ import { Controller, Get, Post, Body, HttpStatus } from '@nestjs/common';
 import { AddDuckFeedRequestDto } from './dto/request/add-duck-feed-request.dto';
 import { DuckFeedService } from './services/duck-feed.service';
 import { TranslateService } from './../../infrastructure/services/translate.service';
-import { ErrorMessagesEnum } from './../../infrastructure/enums/error-messages.enum';
 import { AddDuckFeedResponseDto } from './dto/response/add-duck-feed-response.dto';
 import { DuckFeedMoel } from './models/duck-feed.model';
+import { SuccessMessagesEnum } from './enums/success-messages.enum';
 
 @Controller('')
 export class DuckFeedController {
@@ -26,7 +26,7 @@ export class DuckFeedController {
             isScheduled: duckFeedData.schedule,
         });
         await this.duckFeedService.addDuckFeed(duckFeedModel);
-        const message = (duckFeedData.schedule) ? ErrorMessagesEnum.successCreatedAndScheduled : ErrorMessagesEnum.successCreated;
+        const message = (duckFeedData.schedule) ? SuccessMessagesEnum.successCreatedAndScheduled : SuccessMessagesEnum.successCreated;
         return {
             status: HttpStatus.CREATED,
             message: this.translateService.translate(message),
