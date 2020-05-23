@@ -9,7 +9,8 @@ import { InfrastructureModule } from './../../infrastructure/infrastructure.modu
 @Module({
     controllers: [DuckFeedController],
     providers: [DuckFeedService, DuckFeedRepository],
-    imports: [InfrastructureModule,
+    imports: [
+        InfrastructureModule,
         MongooseModule.forFeature([
             { name: 'duckFeedInfo', schema: DuckFeedInfoSchema, collection: 'duckFeedInfo' },
         ]),

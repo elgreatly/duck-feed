@@ -31,4 +31,8 @@ export class AddDuckFeedRequestDto {
     @IsBoolean({ message: ErrorMessagesEnum.invalidBoolean, context: ['translated'] })
     @IsOptional()
     schedule: boolean;
+
+    constructor(init?: Partial<AddDuckFeedRequestDto>) {
+        Object.assign(this, init);
+    }
 }

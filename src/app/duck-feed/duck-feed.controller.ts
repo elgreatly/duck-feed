@@ -15,7 +15,7 @@ export class DuckFeedController {
         ) {}
 
     @Post('v1/duck-feed')
-    async createFeedRecord(@Body() duckFeedData: AddDuckFeedRequestDto): Promise<AddDuckFeedResponseDto> {
+    async createDuckFeed(@Body() duckFeedData: AddDuckFeedRequestDto): Promise<AddDuckFeedResponseDto> {
         const duckFeedModel = new DuckFeedMoel({
             fedTime: duckFeedData.fed_time,
             food: duckFeedData.food,
