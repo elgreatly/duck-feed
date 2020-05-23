@@ -1,4 +1,4 @@
-import { Controller, Get, Post, Body } from '@nestjs/common';
+import { Controller, Get, Post, Body, HttpStatus } from '@nestjs/common';
 import { AddDuckFeedRequestDto } from './dto/request/add-duck-feed-request.dto';
 import { DuckFeedService } from './services/duck-feed.service';
 import { TranslateService } from './../../infrastructure/services/translate.service';
@@ -17,7 +17,7 @@ export class DuckFeedController {
     async createFeedRecord(@Body() duckFeedData: AddDuckFeedRequestDto): Promise<AddDuckFeedResponseDto> {
         await this.duckFeedService.addDuckFeed(duckFeedData);
         return {
-            status: 200,
+            status: HttpStatus.CREATED,
             message: this.translateService.translate(ErrorMessagesEnum.successCreate),
         };
     }
