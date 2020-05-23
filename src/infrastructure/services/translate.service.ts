@@ -6,7 +6,7 @@ export class TranslateService {
     constructor(private readonly i18n: I18nRequestScopeService) {
     }
 
-    translate(id: string, options?: any): Promise<any> {
+    translate(id: string, options?: any): string {
         return this.i18n.translate(id, options);
     }
 }
