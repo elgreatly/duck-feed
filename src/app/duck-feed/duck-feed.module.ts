@@ -10,7 +10,9 @@ import { InfrastructureModule } from './../../infrastructure/infrastructure.modu
     controllers: [DuckFeedController],
     providers: [DuckFeedService, DuckFeedRepository],
     imports: [InfrastructureModule,
-        MongooseModule.forFeature([{ name: 'duckFeedInfo', schema: DuckFeedInfoSchema, collection: 'duckFeedInfo' }]),
+        MongooseModule.forFeature([
+            { name: 'duckFeedInfo', schema: DuckFeedInfoSchema, collection: 'duckFeedInfo' },
+        ]),
     ],
 })
 export class DuckFeedModule {}
