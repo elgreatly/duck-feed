@@ -20,6 +20,9 @@ export class DuckFeed extends Document {
 
   @Prop()
   foodWeight: string;
+
+  @Prop()
+  isScheduled: boolean;
 }
 
 export const DuckFeedInfoSchema = SchemaFactory.createForClass(DuckFeed);

@@ -7,6 +7,7 @@ import { BadRequestExceptionFilter } from './infrastructure/exception-filter/bad
 import { HttpExceptionFilter } from './infrastructure/exception-filter/exception-filter';
 import { InfrastructureModule } from './infrastructure/infrastructure.module';
 import { DuckFeedModule } from './app/duck-feed/duck-feed.module';
+import { ScheduleModule } from '@nestjs/schedule';
 
 @Module({
     imports: [
@@ -17,6 +18,7 @@ import { DuckFeedModule } from './app/duck-feed/duck-feed.module';
             fallbackLanguage: 'en',
             resolvers: [new HeaderResolver()],
         }),
+        ScheduleModule.forRoot(),
         DuckFeedModule,
     ],
     providers: [

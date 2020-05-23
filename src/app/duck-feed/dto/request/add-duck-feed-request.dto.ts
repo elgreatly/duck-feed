@@ -1,4 +1,4 @@
-import { IsNotEmpty, IsString, IsNumber } from 'class-validator';
+import { IsNotEmpty, IsString, IsNumber, IsOptional, IsBoolean } from 'class-validator';
 import { ErrorMessagesEnum } from '../../../../infrastructure/enums/error-messages.enum';
 import { IsDateFormat } from '../../../../infrastructure/custom-validators/is-date-format.validator';
 // tslint:disable: variable-name
@@ -27,4 +27,8 @@ export class AddDuckFeedRequestDto {
     @IsNotEmpty({ message: ErrorMessagesEnum.required, context: ['translated'] })
     @IsString({ message: ErrorMessagesEnum.invalidString, context: ['translated'] })
     food_weight: string;
+
+    @IsBoolean({ message: ErrorMessagesEnum.invalidBoolean, context: ['translated'] })
+    @IsOptional()
+    schedule: boolean;
 }
