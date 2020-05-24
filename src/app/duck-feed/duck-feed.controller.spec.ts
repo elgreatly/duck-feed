@@ -51,7 +51,8 @@ describe('duckFeedService', () => {
                         place: 'farm',
                         numberOfDucks: 10,
                         foodType: 'Starches',
-                        foodWeight: '10 KG',
+                        foodWeight: 10,
+                        foodWeightType: 'kg',
                     }),
                 ),
             );
@@ -66,7 +67,7 @@ describe('duckFeedService', () => {
                 place: 'farm',
                 number_of_ducks: 10,
                 food_type: 'Starches',
-                food_weight: '10 KG',
+                food_weight: 10,
             });
 
             const expected = await duckFeedController.createDuckFeed(input);
@@ -84,7 +85,8 @@ describe('duckFeedService', () => {
                         place: 'farm',
                         numberOfDucks: 10,
                         foodType: 'Starches',
-                        foodWeight: '10 KG',
+                        foodWeight: 10,
+                        foodWeightType: 'kg',
                         isScheduled: true,
                     }),
                 ),
@@ -100,7 +102,7 @@ describe('duckFeedService', () => {
                 place: 'farm',
                 number_of_ducks: 10,
                 food_type: 'Starches',
-                food_weight: '10 KG',
+                food_weight: 10,
                 schedule: true,
             });
 
