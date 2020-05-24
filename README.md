@@ -24,7 +24,7 @@ $ npm run start:prod
 ```
 
 ## Test
-
+to run tests must create `test.env` file and add the testing environment data to handle the integration test
 ```bash
 $ npm run test
 ```
