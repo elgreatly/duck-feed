@@ -31,7 +31,8 @@ describe('duckFeedRepository', () => {
                 place: 'farm',
                 numberOfDucks: 10,
                 foodType: 'Starches',
-                foodWeight: '10 KG',
+                foodWeight: 10,
+                foodWeightType: 'kg',
                 isScheduled: true,
             });
 
@@ -48,7 +49,7 @@ describe('duckFeedRepository', () => {
                 place: 'farm',
                 numberOfDucks: 10,
                 foodType: 'Starches',
-                foodWeight: '10 KG',
+                foodWeight: 10,
                 isScheduled: true,
                 fakeParam: 'sss',
             };
@@ -63,14 +64,14 @@ describe('duckFeedRepository', () => {
     describe('insertMany', () => {
         it('should create multiple duck feed and return a array of duck feed object', async () => {
 
-            const result = [
+            const input = [
                 new DuckFeedMoel({
                     fedTime: '12:10',
                     food: 'rice',
                     place: 'farm',
                     numberOfDucks: 10,
                     foodType: 'Starches',
-                    foodWeight: '10 KG',
+                    foodWeight: 10,
                     isScheduled: true,
                 }),
                 new DuckFeedMoel({
@@ -79,11 +80,33 @@ describe('duckFeedRepository', () => {
                     place: 'farm',
                     numberOfDucks: 10,
                     foodType: 'Starches',
-                    foodWeight: '20 KG',
+                    foodWeight: 20,
                 }),
             ];
 
-            const expected = await duckFeedRepository.insertMany(result);
+            const result = [
+                new DuckFeedMoel({
+                    fedTime: '12:10',
+                    food: 'rice',
+                    place: 'farm',
+                    numberOfDucks: 10,
+                    foodType: 'Starches',
+                    foodWeight: 10,
+                    foodWeightType: 'kg',
+                    isScheduled: true,
+                }),
+                new DuckFeedMoel({
+                    fedTime: '12:10',
+                    food: 'rice 1',
+                    place: 'farm',
+                    numberOfDucks: 10,
+                    foodType: 'Starches',
+                    foodWeight: 20,
+                    foodWeightType: 'kg',
+                }),
+            ];
+
+            const expected = await duckFeedRepository.insertMany(input);
 
             expect(JSON.stringify(expected)).toBe(JSON.stringify(result));
         });

@@ -27,31 +27,31 @@ describe('duckFeedService', () => {
 
     describe('addDuckFeed', () => {
         it('should return a duck feed object after create', async () => {
-            const Reporesponse: Promise<DuckFeedMoel> = new Promise((resolve) =>
-                resolve(
-                    new DuckFeedMoel({
-                        fedTime: '12:10',
-                        food: 'rice',
-                        place: 'farm',
-                        numberOfDucks: 10,
-                        foodType: 'Starches',
-                        foodWeight: '10 KG',
-                    }),
-                ),
-            );
-
-            jest.spyOn(duckFeedRepository, 'create').mockImplementation(() => Reporesponse);
-
             const result = new DuckFeedMoel({
                 fedTime: '12:10',
                 food: 'rice',
                 place: 'farm',
                 numberOfDucks: 10,
                 foodType: 'Starches',
-                foodWeight: '10 KG',
+                foodWeight: 10,
+                foodWeightType: 'kg',
+            });
+            const Reporesponse: Promise<DuckFeedMoel> = new Promise((resolve) =>
+                resolve(result),
+            );
+
+            jest.spyOn(duckFeedRepository, 'create').mockImplementation(() => Reporesponse);
+
+            const input = new DuckFeedMoel({
+                fedTime: '12:10',
+                food: 'rice',
+                place: 'farm',
+                numberOfDucks: 10,
+                foodType: 'Starches',
+                foodWeight: 10,
             });
 
-            const expected = await duckFeedService.addDuckFeed(result);
+            const expected = await duckFeedService.addDuckFeed(input);
 
             expect(JSON.stringify(expected)).toBe(JSON.stringify(result));
         });

@@ -17,7 +17,7 @@ export class AddDuckFeedRequestDto {
     place: string;
 
     @IsNotEmpty({ message: ErrorMessagesEnum.required, context: ['translated'] })
-    @IsNumber({}, { message: ErrorMessagesEnum.invalidString, context: ['translated'] })
+    @IsNumber({}, { message: ErrorMessagesEnum.invalidNumber, context: ['translated'] })
     number_of_ducks: number;
 
     @IsNotEmpty({ message: ErrorMessagesEnum.required, context: ['translated'] })
@@ -25,8 +25,8 @@ export class AddDuckFeedRequestDto {
     food_type: string;
 
     @IsNotEmpty({ message: ErrorMessagesEnum.required, context: ['translated'] })
-    @IsString({ message: ErrorMessagesEnum.invalidString, context: ['translated'] })
-    food_weight: string;
+    @IsNumber({}, { message: ErrorMessagesEnum.invalidNumber, context: ['translated'] })
+    food_weight: number;
 
     @IsBoolean({ message: ErrorMessagesEnum.invalidBoolean, context: ['translated'] })
     @IsOptional()
