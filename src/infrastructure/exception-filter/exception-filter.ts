@@ -14,14 +14,10 @@ export class HttpExceptionFilter implements ExceptionFilter {
             },
         ];
 
-        if (exception.message.errors || exception.message.error) {
-            response.status(status).json(exception.message);
-        } else {
-            response.status(status).json({
-                status,
-                message: exception.message,
-                errors,
-            });
-        }
+        response.status(status).json({
+            status,
+            message: exception.message,
+            errors,
+        });
     }
 }
