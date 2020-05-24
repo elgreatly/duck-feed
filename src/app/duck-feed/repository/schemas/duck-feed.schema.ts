@@ -19,7 +19,10 @@ export class DuckFeed extends Document {
   foodType: string;
 
   @Prop()
-  foodWeight: string;
+  foodWeight: number;
+
+  @Prop({default: 'kg'})
+  foodWeightType: string;
 
   @Prop()
   isScheduled: boolean;

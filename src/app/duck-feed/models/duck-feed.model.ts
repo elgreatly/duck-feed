@@ -4,7 +4,8 @@ export class DuckFeedMoel {
     place: string;
     numberOfDucks: number;
     foodType: string;
-    foodWeight: string;
+    foodWeight: number;
+    foodWeightType?: string;
     isScheduled: boolean;
 
     constructor(init?: Partial<DuckFeedMoel>) {

@@ -29,6 +29,7 @@ export class DuckFeedRepository {
       numberOfDucks: duckFeed.numberOfDucks,
       foodType: duckFeed.foodType,
       foodWeight: duckFeed.foodWeight,
+      foodWeightType: duckFeed.foodWeightType,
       isScheduled: duckFeed.isScheduled,
     });
   }
@@ -44,6 +45,7 @@ export class DuckFeedRepository {
         numberOfDucks: duckFeed.numberOfDucks,
         foodType: duckFeed.foodType,
         foodWeight: duckFeed.foodWeight,
+        foodWeightType: duckFeed.foodWeightType,
         isScheduled: duckFeed.isScheduled,
       });
     });
@@ -60,6 +62,7 @@ export class DuckFeedRepository {
         numberOfDucks: duckFeed.numberOfDucks,
         foodType: duckFeed.foodType,
         foodWeight: duckFeed.foodWeight,
+        foodWeightType: duckFeed.foodWeightType,
         isScheduled: duckFeed.isScheduled,
       });
     });
@@ -89,6 +92,7 @@ export class DuckFeedRepository {
         numberOfDucks: duckFeed.numberOfDucks,
         foodType: duckFeed.foodType,
         foodWeight: duckFeed.foodWeight,
+        foodWeightType: duckFeed.foodWeightType,
         isScheduled: duckFeed.isScheduled,
       });
     });
