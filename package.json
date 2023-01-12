@@ -31,7 +31,7 @@
     "amqplib": "^0.5.5",
     "cache-manager": "^2.10.1",
     "class-transformer": "^0.2.3",
-    "class-validator": "^0.10.2",
+    "class-validator": "^0.14.0",
     "copyfiles": "^2.1.1",
     "dotenv": "^8.2.0",
     "moment": "^2.24.0",
